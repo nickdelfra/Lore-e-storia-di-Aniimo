@@ -4,7 +4,7 @@
 
 Testo ricostruito, riformulato e tradotto da **Nicola del Francia**.
 
-🌐 **[Consulta la raccolta online](https://nickdelfra.github.io/Raccolta-Dati-Aniimo-Lore-Italiano/)**
+🌐 **[Consulta la raccolta online](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
 
 ---
 
@@ -44,7 +44,7 @@ Astra e l’**Istituto Polaris** costituiscono la base dei Pathfinder, mentre Id
 
 La raccolta è disponibile direttamente dal browser, senza installazioni:
 
-👉 **[Apri Lore di Aniimo](https://nickdelfra.github.io/Raccolta-Dati-Aniimo-Lore-Italiano/)**
+👉 **[Apri Lore di Aniimo](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
 
 Il sito è pubblicato tramite **GitHub Pages**.
 
