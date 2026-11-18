@@ -48,17 +48,6 @@ La raccolta è disponibile direttamente dal browser, senza installazioni:
 
 Il sito è pubblicato tramite **GitHub Pages**.
 
-## 🗂️ Struttura del repository
-
-```
-index.html                  la pagina del sito (testo, stile e lettore musicale)
-assets/img/00-prologo/      immagini del Prologo
-assets/img/01-astra/ …      una cartella per capitolo, numerata come nel sito
-assets/img/09-storia-principale/
-assets/musica/              brano di sottofondo (march-of-progress.mp3)
-```
-
-Per aggiungere un’immagine: caricala nella cartella del capitolo con un nome **minuscolo, senza spazi né accenti** (per esempio `vene-bloom.jpeg`) e scrivi lo stesso percorso in `index.html`. GitHub Pages distingue maiuscole e minuscole: `Astra.png` e `astra.png` sono due file diversi. Le immagini rendono meglio intorno ai 1280–1600 pixel di larghezza e sotto i 400 KB.
 
 ## 🔎 Fonti
 
