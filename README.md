@@ -128,6 +128,10 @@ Testi ricostruiti, riassunti, riformulati e tradotti da **Nicola del Francia**, 
 
 La pubblicazione nel repository non concede automaticamente diritti di riutilizzo sui materiali di terzi.
 
+## ☕ Sostieni il progetto
+
+Se la raccolta ti è utile, puoi sostenere il lavoro su **[paypal.me/nickdelfra](https://paypal.me/nickdelfra)**.
+
 ---
 
 **Lore di Aniimo · Raccolta in italiano**  
