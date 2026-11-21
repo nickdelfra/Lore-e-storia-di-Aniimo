@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idyll e l&#x27;Antica Idyll — Lore di Aniimo</title>
+<meta name="description" content="Il continente selvaggio sotto Astra e la civiltà perduta dell&#x27;Antica Idyll, tra rovine, Mechina e Santuari.">
+<meta name="author" content="Nicola del Francia">
+<meta name="theme-color" content="#0a1322">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Idyll e l&#x27;Antica Idyll — Lore di Aniimo">
+<meta property="og:description" content="Il continente selvaggio sotto Astra e la civiltà perduta dell&#x27;Antica Idyll, tra rovine, Mechina e Santuari.">
+<meta property="og:url" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/idyll.html">
+<meta property="og:image" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/assets/img/02-idyll/idyll.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230a1322' stroke='%23d3b36a' stroke-width='2'/%3E%3Cpath d='M16 6l2.6 7.4L26 16l-7.4 2.6L16 26l-2.6-7.4L6 16l7.4-2.6z' fill='%23d3b36a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="capitolo">
+<a class="skip" href="#page">Vai al testo</a>
+<div id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
+  <span class="crumb" id="crumb">Capitolo 2 · Idyll</span>
+  <div class="tools">
+    <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
+  <div class="search-panel">
+    <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</div>
+
+<main id="page" class="chapter-page" data-slug="idyll" data-crumb="Capitolo 2 · Idyll" tabindex="-1">
+  <header class="chapter-hero" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/02-idyll/idyll.jpeg')">
+    <div class="inner">
+      <p class="chapter-label">Capitolo 2</p>
+      <h1 class="chapter-title">Idyll e l'Antica Idyll</h1>
+      <p class="chapter-meta">3 min di lettura · 5 illustrazioni</p>
+    </div>
+  </header>
+  <article class="prose ">
+<figure id="b1" class="illustration">
+  <img src="assets/img/02-idyll/idyll.jpeg" width="1376" height="768" decoding="async" loading="lazy" alt="Panorama di Idyll: valli verdi e un fiume tra le nuvole, isole fluttuanti con grandi denti di leone luminosi, un anello gigante nel cielo e, su una collina in primo piano, un esploratore con lo zaino accanto a una piccola creatura bianca.">
+  <figcaption><strong>Idyll</strong>il continente visto dall'alto: valli verdi, un fiume che serpeggia tra le nuvole, isole sospese con giganteschi denti di leone e, in cielo, un grande anello. In primo piano, un esploratore con lo zaino e un piccolo compagno bianco.</figcaption>
+</figure>
+<p id="b2" class="dropcap">Torniamo, ora, a ciò che sta sotto Astra. Dopo aver detto addio alla Terra perduta, l'umanità trovò Idyll: un continente splendido e vitale, con Aniimo in ogni angolo. A differenza della frenesia moderna di Astra, qui la natura è rimasta intatta.</p>
+<p id="b3">Si narra che nove Aeon abbiano creato insieme Idyll, ognuno a protezione di un dominio diverso, e che sotto la loro guida Idylliani e Aniimo vivano in armonia.</p>
+<figure id="b4" class="illustration">
+  <img src="assets/img/02-idyll/genesis-legend.jpeg" width="1266" height="832" decoding="async" loading="lazy" alt="Mappa di Idyll su pergamena consumata, con terre verdi, ocra e rosse e mari azzurri; su ogni territorio c'è la sagoma di una creatura leggendaria.">
+  <figcaption><strong>Genesis Legend</strong>la Leggenda della Genesi: una mappa antica di Idyll su pergamena consumata, dove ogni territorio porta la sagoma di una creatura leggendaria.</figcaption>
+</figure>
+<p id="b5">Gli Idylliani, di cuore semplice, costruiscono insediamenti e sviluppano le loro attività con l'aiuto delle creature.</p>
+<figure id="b6" class="illustration">
+  <img src="assets/img/02-idyll/life-in-idyll.jpeg" width="1275" height="816" decoding="async" loading="lazy" alt="Un villaggio di Idyll con un grande alambicco bianco circondato da ceste di lavanda, un mulino ad acqua sullo sfondo e alcuni abitanti che lavorano sull'erba.">
+  <figcaption><strong>Life in Idyll</strong>la vita quotidiana a Idyll: un villaggio con un grande alambicco bianco, ceste di lavanda e abitanti al lavoro tra i prati.</figcaption>
+</figure>
+<p id="b7">Ma prima di loro c'era stata un'altra civiltà. L'Antica Idyll fu gloriosa e ora giace in rovina, e di lei restano soprattutto le Mechina: i misteriosi meccanismi e le strutture che i suoi abitanti eressero sotto la guida degli Aeon Primi. Erano dispositivi magici capaci di incanalare l'energia delle Vene, e si dice che il loro scopo originario fosse riparare le Vene danneggiate. A farle ancora funzionare sono i Santuari, i dungeon-puzzle del gioco, costruiti sopra i nodi principali delle Vene e sparsi per tutto il continente: se ne contano diciassette.</p>
+<figure id="b8" class="illustration">
+  <img src="assets/img/02-idyll/antica-idyll-rovine.jpeg" width="1376" height="768" decoding="async" loading="lazy" alt="Rovine di pietra con due archi e un muro coperti d'edera, un cubo con circuiti viola luminosi sopra un arco, alberi verdi e arancioni e un disco di pietra inciso in basso a sinistra.">
+  <figcaption><strong>Antica Idyll: la civiltà perduta</strong>le rovine di archi e muri di pietra coperti d'edera, con un cubo dai circuiti viola luminosi, tra alberi dai colori d'autunno.</figcaption>
+</figure>
+<figure id="b9" class="illustration">
+  <img src="assets/img/02-idyll/mechina.jpeg" width="1259" height="832" decoding="async" loading="lazy" alt="Grande sala sotterranea di blocchi di pietra con cristalli e fiamme azzurre, un bacino d'acqua luminosa e una piccola figura in piedi in cima a una scalinata.">
+  <figcaption><strong>Mechina</strong>una sala di pietra antica illuminata di blu, con cristalli e fiamme azzurre, e un esploratore davanti a un bacino di luce.</figcaption>
+</figure>
+<p id="b10">Entrare in un Santuario è come entrare in un luogo che non vuole ospiti. L'instabilità energetica al suo interno impedisce di portare con sé la propria squadra, così bisogna svegliare una statua sigillata e fondersi, per un tempo limitato, con le abilità elementali di un Aniimo nativo del dungeon: elettricità, ghiaccio, magnetismo. Poi si risolvono i puzzle: blocchi polarizzati e circuiti elettrici e magnetici da collegare con la telecinesi, per riattivare i flussi di energia. In fondo a ogni Santuario c'è il Tesseract, un nucleo cubico: quando lo si attiva, le Mechina si allineano, la Vena viene riparata e si ottiene l'Ambra Lumin. Ma di quali Vene stiamo parlando? Ce ne occuperemo nel Capitolo 6. Per ora basta sapere che questo continente è popolato da creature straordinarie, e che da loro dipende quasi tutto.</p>
+
+  </article>
+  <nav class="pager" aria-label="Capitolo precedente e successivo">
+    <a class="prev" href="astra.html" rel="prev"><small>← Capitolo 1</small><b>Astra e l&#x27;Istituto Polaris</b></a>
+    <a class="next" href="aniimo.html" rel="next"><small>Capitolo 3 →</small><b>Gli Aniimo</b></a>
+  </nav>
+  <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="brandline">Lore di Aniimo · prima edizione in italiano</div>
+  <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
+  <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
+  <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
+</footer>
+
+<audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
+<aside class="player" id="player" aria-label="Lettore musicale">
+  <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <div class="player-body">
+    <div class="track-row"><span class="track-title">MALO · March of Progress</span><span class="time" id="timeLabel">0:00 / 0:00</span></div>
+    <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
+    <div class="ctrl-row">
+      <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" aria-label="Volume">
+      <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
+    </div>
+    <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
+  </div>
+  <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
+</aside>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>
