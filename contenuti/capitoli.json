@@ -6,79 +6,116 @@
   },
   "pagine": [
     {
-      "slug": "prologo", "gruppo": "racconto", "numero": "Prologo",
+      "slug": "introduzione",
+      "gruppo": "racconto",
+      "numero": "Introduzione",
+      "titolo": "Prima di cominciare",
+      "breve": "Introduzione",
+      "copertina": "assets/img/02-idyll/life-in-idyll.jpeg",
+      "descrizione": "Una mappa del viaggio: cosa racconta ogni capitolo, dove trovarlo e come usare indice, ricerca, giorno e notte e musica."
+    },
+    {
+      "slug": "prologo",
+      "gruppo": "racconto",
+      "numero": "Prologo",
       "titolo": "La storia di Aniimo",
       "breve": "Prologo",
       "descrizione": "Dalla fine della Terra alla nascita di Astra: la storia di Aniimo in breve, dai nove Aeon alle Vene fino al primo passo del Pathfinder."
     },
     {
-      "slug": "astra", "gruppo": "racconto", "numero": "Capitolo 1",
+      "slug": "astra",
+      "gruppo": "racconto",
+      "numero": "Capitolo 1",
       "titolo": "Astra e l'Istituto Polaris",
       "breve": "Astra",
       "descrizione": "La città sospesa sopra Idyll, la Lumintech e l'Istituto Polaris, con i suoi tre strumenti: Avamposto, Aniipod e Omni-glove."
     },
     {
-      "slug": "idyll", "gruppo": "racconto", "numero": "Capitolo 2",
+      "slug": "idyll",
+      "gruppo": "racconto",
+      "numero": "Capitolo 2",
       "titolo": "Idyll e l'Antica Idyll",
       "breve": "Idyll",
       "descrizione": "Il continente selvaggio sotto Astra e la civiltà perduta dell'Antica Idyll, tra rovine, Mechina e Santuari."
     },
     {
-      "slug": "aniimo", "gruppo": "racconto", "numero": "Capitolo 3",
+      "slug": "aniimo",
+      "gruppo": "racconto",
+      "numero": "Capitolo 3",
       "titolo": "Gli Aniimo",
       "breve": "Gli Aniimo",
       "descrizione": "Le creature di Idyll: forme, abitudini, Energia Elementale ed evoluzioni."
     },
     {
-      "slug": "pathfinder", "gruppo": "racconto", "numero": "Capitolo 4",
+      "slug": "pathfinder",
+      "gruppo": "racconto",
+      "numero": "Capitolo 4",
       "titolo": "Il Pathfinder",
       "breve": "Il Pathfinder",
       "descrizione": "Chi apre la strada a Idyll: l'origine del nome, il ruolo dei Pathfinder e il posto del giocatore."
     },
     {
-      "slug": "twine", "gruppo": "racconto", "numero": "Capitolo 5",
+      "slug": "twine",
+      "gruppo": "racconto",
+      "numero": "Capitolo 5",
       "titolo": "Il Twine (intreccio)",
       "breve": "Il Twine",
       "descrizione": "Il legame che unisce umano e Aniimo: condividere i sensi, muoversi e combattere con le sue abilità."
     },
     {
-      "slug": "vene", "gruppo": "racconto", "numero": "Capitolo 6",
+      "slug": "vene",
+      "gruppo": "racconto",
+      "numero": "Capitolo 6",
       "titolo": "Le Vene",
       "breve": "Le Vene",
       "descrizione": "La rete di energia sotto Idyll: Rami, Fioriture, Ambra Lumin e Flusso Prismana."
     },
     {
-      "slug": "costa-dello-zefiro", "gruppo": "racconto", "numero": "Capitolo 7",
+      "slug": "costa-dello-zefiro",
+      "gruppo": "racconto",
+      "numero": "Capitolo 7",
       "titolo": "La Costa dello Zefiro",
       "breve": "Costa dello Zefiro",
       "descrizione": "La terra dell'Aeon Aeolus: le Pianure Ventose, Bloomville e il mistero di Irelia."
     },
     {
-      "slug": "leggende", "gruppo": "racconto", "numero": "Capitolo 8",
+      "slug": "leggende",
+      "gruppo": "racconto",
+      "numero": "Capitolo 8",
       "titolo": "Leggende e murali",
       "breve": "Leggende",
       "descrizione": "Le leggende dipinte di Idyll: Helgon, Rookey e Infergon, e le tavole che raccontano storie più intime."
     },
     {
-      "slug": "storia-principale", "gruppo": "racconto", "numero": "Capitolo 9",
+      "slug": "storia-principale",
+      "gruppo": "racconto",
+      "numero": "Capitolo 9",
       "titolo": "La storia principale",
       "breve": "Storia principale",
       "descrizione": "La trama vissuta dal giocatore, da Starfall Valley agli episodi di Bloomville. Contiene anticipazioni sulla storia."
     },
     {
-      "slug": "glossario", "gruppo": "extra", "numero": "Glossario", "extra": "glossary",
+      "slug": "glossario",
+      "gruppo": "extra",
+      "numero": "Glossario",
+      "extra": "glossary",
       "titolo": "Le parole del mondo",
       "breve": "Glossario",
       "descrizione": "Le parole chiave del mondo di gioco, da Vena a Tesseract."
     },
     {
-      "slug": "conclusione", "gruppo": "extra", "numero": "Conclusione",
+      "slug": "conclusione",
+      "gruppo": "extra",
+      "numero": "Conclusione",
       "titolo": "Il mondo di Aniimo",
       "breve": "Conclusione",
       "descrizione": "Che gioco è Aniimo e perché la lore conta per il Twine."
     },
     {
-      "slug": "fonti", "gruppo": "extra", "numero": "Fonti", "extra": "sources",
+      "slug": "fonti",
+      "gruppo": "extra",
+      "numero": "Fonti",
+      "extra": "sources",
       "titolo": "Fonti e crediti",
       "breve": "Fonti e crediti",
       "descrizione": "Le pagine consultate, i crediti di immagini e musica e le note dell'autore."

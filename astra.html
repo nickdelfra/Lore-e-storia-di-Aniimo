@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-modo="scuro">
 <head>
+<script>try{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}catch(e){}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Astra e l&#x27;Istituto Polaris — Lore di Aniimo</title>
@@ -21,6 +22,7 @@
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="capitolo">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
 <a class="skip" href="#page">Vai al testo</a>
 <div id="scrollProgress"></div>
 
@@ -28,13 +30,14 @@
   <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
   <span class="crumb" id="crumb">Capitolo 1 · Astra</span>
   <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
     <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
     <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
   </div>
 </header>
 
 <div id="scrim" hidden></div>
-<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="introduzione.html" data-slug="introduzione"><span class="n">In</span><span>Prima di cominciare</span></a></li><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
 <div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
   <div class="search-panel">
     <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
@@ -42,8 +45,8 @@
   </div>
 </div>
 
-<main id="page" class="chapter-page" data-slug="astra" data-crumb="Capitolo 1 · Astra" tabindex="-1">
-  <header class="chapter-hero" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/01-astra/astra.jpeg')">
+<main id="page" class="chapter-page" data-slug="astra" data-indice="3" data-totale="14" data-crumb="Capitolo 1 · Astra" tabindex="-1">
+  <header class="chapter-hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/01-astra/astra.jpeg')"></div>
     <div class="inner">
       <p class="chapter-label">Capitolo 1</p>
       <h1 class="chapter-title">Astra e l'Istituto Polaris</h1>
@@ -55,17 +58,17 @@
   <img src="assets/img/01-astra/astra.jpeg" width="1440" height="810" decoding="async" loading="lazy" alt="Astra: una grande città in cupole di vetro, con grattacieli, laghi e giardini, in orbita sopra un pianeta blu; una navetta bianca lascia una scia luminosa.">
   <figcaption><strong>Astra</strong>la città racchiusa in cupole di vetro, con grattacieli, laghi e giardini, sopra un pianeta blu.</figcaption>
 </figure>
-<p id="b2" class="dropcap">Alziamo lo sguardo. Sopra Idyll, sospesa tra le nuvole, c'è Astra: una città nata da un antico rifugio costruito per la fine del mondo, che portava con sé i semi della civiltà terrestre e che, dopo un lungo viaggio, scoprì il continente sottostante. Gli umani edificarono la città in volo sopra di esso e cominciarono a esplorarlo, e su Idyll trovarono cristalli di energia e rovine di una civiltà antica. Da quelle scoperte è nata la Lumintech, una tecnologia pulita ed efficiente alimentata dai Cristalli, che ha risolto i problemi energetici della città. Ma il cambiamento più visibile, nei quartieri nuovi, riguarda gli Aniimo: aiutano gli astreani a esplorare Idyll, i giovani sognano un compagno tutto loro e molte creature si sono trasferite in città insieme ai loro tutori, tanto che strutture e prodotti pensati per loro sono ormai dappertutto.</p>
+<p id="b2" class="dropcap">Alziamo lo sguardo. Sopra <strong class="nome">Idyll</strong>, sospesa tra le nuvole, c'è <strong class="nome">Astra</strong>: una città nata da un antico rifugio costruito per la fine del mondo, che portava con sé i semi della civiltà terrestre e che, dopo un lungo viaggio, scoprì il continente sottostante. Gli umani edificarono la città in volo sopra di esso e cominciarono a esplorarlo, e su Idyll trovarono cristalli di energia e rovine di una civiltà antica. Da quelle scoperte è nata la <strong class="nome">Lumintech</strong>, una tecnologia pulita ed efficiente alimentata dai Cristalli, che ha risolto i problemi energetici della città. Ma il cambiamento più visibile, nei quartieri nuovi, riguarda gli <strong class="nome">Aniimo</strong>: aiutano gli astreani a esplorare Idyll, i giovani sognano un compagno tutto loro e molte creature si sono trasferite in città insieme ai loro tutori, tanto che strutture e prodotti pensati per loro sono ormai dappertutto.</p>
 <figure id="b3" class="illustration">
   <img src="assets/img/01-astra/lumintech.jpeg" width="1440" height="810" decoding="async" loading="lazy" alt="Piazza futuristica sotto un cielo azzurro: una monorotaia attraversa grattacieli verdi, grandi schermi, ciliegi in fiore e un Aniimo luminoso a sinistra.">
   <figcaption><strong>Lumintech</strong>una piazza di Astra con monorotaia, schermi luminosi e alberi in fiore.</figcaption>
 </figure>
-<p id="b4">Il cuore di questa vita nuova è l'Istituto Polaris. Lo fondò Oswen, un erudito ed esploratore, per studiare gli Aniimo e organizzare le spedizioni su Idyll, e lì studenti e creature si allenano e crescono insieme. L'Istituto ha tre anime. L'Aniimologia documenta gli ecosistemi, analizza i profili biologici, costruisce l'Aniilog, divulga la conoscenza e sviluppa strutture per una convivenza armoniosa tra umani e Aniimo. Il Pathfinding parte verso i territori inesplorati e le rovine antiche, per svelare i segreti di Idyll. La Battle Art, infine, prepara ai pericoli della natura e, con simulazioni olografiche (Holo), affina la coordinazione in battaglia tra umano e Aniimo.</p>
+<p id="b4">Il cuore di questa vita nuova è l'Istituto Polaris. Lo fondò <strong class="nome">Oswen</strong>, un erudito ed esploratore, per studiare gli Aniimo e organizzare le spedizioni su Idyll, e lì studenti e creature si allenano e crescono insieme. L'Istituto ha tre anime. L'Aniimologia documenta gli ecosistemi, analizza i profili biologici, costruisce l'<strong class="nome">Aniilog</strong>, divulga la conoscenza e sviluppa strutture per una convivenza armoniosa tra umani e Aniimo. Il <strong class="nome">Pathfinding</strong> parte verso i territori inesplorati e le rovine antiche, per svelare i segreti di Idyll. La <strong class="nome">Battle Art</strong>, infine, prepara ai pericoli della natura e, con simulazioni olografiche (<strong class="nome">Holo</strong>), affina la coordinazione in battaglia tra umano e Aniimo.</p>
 <figure id="b5" class="illustration">
   <img src="assets/img/01-astra/aniipod.jpeg" width="1376" height="768" decoding="async" loading="lazy" alt="Tre capsule cubiche luminose, una rossa, una verde e una blu con un vortice d'acqua, appoggiate su piedistalli arancioni all'interno di una struttura bianca e viola.">
   <figcaption><strong>Aniipod</strong>lo strumento con cui l'Istituto Polaris cattura, equipaggia e allena gli Aniimo: tre Aniipod luminosi, rosso, verde e blu, sui loro piedistalli.</figcaption>
 </figure>
-<p id="b6">A chi parte in spedizione l'Istituto affida tre strumenti. L'Avamposto è la base su Idyll: offre valutazioni di livello, rapporti della Research Console, riposo e cure, rifornimenti e teletrasporto. L'Aniipod serve a catturare, equipaggiare e allenare gli Aniimo, e al suo interno una piegatura dello spazio crea un comodo luogo di riposo. L'Omni-glove è un dispositivo Lumintech multifunzione, che integra applicazioni diverse e permette, tra l'altro, di potenziare il twining (intreccio), lanciare abilità e trasmettere energia. Da qui comincia anche la storia che vive il giocatore (Capitolo 9): si entra nella squadra di spedizione come osservatore speciale e poi nell'Istituto. Ma tutta questa tecnologia ruota attorno a una sola cosa, il continente che vive sotto Astra, ed è da lì che dobbiamo partire.</p>
+<p id="b6">A chi parte in spedizione l'Istituto affida tre strumenti. L'Avamposto è la base su Idyll: offre valutazioni di livello, rapporti della <strong class="nome">Research Console</strong>, riposo e cure, rifornimenti e teletrasporto. L'<strong class="nome">Aniipod</strong> serve a catturare, equipaggiare e allenare gli Aniimo, e al suo interno una piegatura dello spazio crea un comodo luogo di riposo. L'<strong class="nome">Omni-glove</strong> è un dispositivo Lumintech multifunzione, che integra applicazioni diverse e permette, tra l'altro, di potenziare il twining (intreccio), lanciare abilità e trasmettere energia. Da qui comincia anche la storia che vive il giocatore (Capitolo 9): si entra nella squadra di spedizione come osservatore speciale e poi nell'Istituto. Ma tutta questa tecnologia ruota attorno a una sola cosa, il continente che vive sotto Astra, ed è da lì che dobbiamo partire.</p>
 <figure id="b7" class="illustration">
   <img src="assets/img/01-astra/omni-glove.jpeg" width="1273" height="832" decoding="async" loading="lazy" alt="Una giovane dai capelli viola, in tuta bianca e rosa, regge sul palmo un ologramma con un'isola fluttuante, denti di leone giganti e un fiume, su un terrazzo vicino al mare.">
   <figcaption><strong>Connessione a Idyll via Omni-glove</strong>l'Omni-glove in azione: un ologramma mostra un'isola di Idyll con i suoi giganteschi denti di leone e il fiume che la attraversa.</figcaption>
@@ -73,14 +76,14 @@
 
   </article>
   <nav class="pager" aria-label="Capitolo precedente e successivo">
-    <a class="prev" href="prologo.html" rel="prev"><small>← Prologo</small><b>La storia di Aniimo</b></a>
-    <a class="next" href="idyll.html" rel="next"><small>Capitolo 2 →</small><b>Idyll e l&#x27;Antica Idyll</b></a>
+    <a class="prev" href="prologo.html" rel="prev"><span class="pthumb"><img src="assets/img/_anteprime/prologo.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>← Prologo</small><b>La storia di Aniimo</b></span></a>
+    <a class="next" href="idyll.html" rel="next"><span class="pthumb"><img src="assets/img/_anteprime/idyll.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>Capitolo 2 →</small><b>Idyll e l&#x27;Antica Idyll</b></span></a>
   </nav>
   <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
 </main>
 
 <footer class="site-footer">
-  <div class="brandline">Lore di Aniimo · prima edizione in italiano</div>
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
   <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
   <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
   <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
@@ -89,16 +92,19 @@
 <audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
 <aside class="player" id="player" aria-label="Lettore musicale">
   <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
   <div class="player-body">
-    <div class="track-row"><span class="track-title">MALO · March of Progress</span><span class="time" id="timeLabel">0:00 / 0:00</span></div>
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
     <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
-    <div class="ctrl-row">
+    <div class="ctrl-row"><div>
       <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
-      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" aria-label="Volume">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
       <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
-    </div>
+    </div></div>
     <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
   </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
   <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
 </aside>
 

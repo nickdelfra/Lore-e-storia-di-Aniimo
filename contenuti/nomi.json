@@ -1,0 +1,19 @@
+{
+  "_nota": "Nomi propri inglesi messi in grassetto nei paragrafi del racconto. 'modo': 'prima' = solo la prima volta che compaiono in ogni pagina, 'tutte' = ogni volta.",
+  "modo": "prima",
+  "nomi": [
+    "Aniimo", "Idyll", "Astra", "Pathfinder", "Pathfinding", "Twine", "Aeon", "Mechina",
+    "Lumintech", "Aniipod", "Omni-glove", "Tesseract", "Aniilog", "Battle Art", "Holo", "Holo-Battle Interlink",
+    "Research Console", "Homeland", "Main Story", "Growth Story", "Home Quests", "Journey",
+    "Oswen", "Nicole", "Dr. Lewis", "Sunia", "Velouria", "Irelia", "Irisalis", "Helion", "Lunara",
+    "Aeolus", "Protos", "Helgon", "Rookey", "Infergon", "Wendell", "Umbral",
+    "Helmut", "Jawling", "Emberpup", "Helmwhelp", "Celestis", "Skippy", "Hatchinator", "Somniwing",
+    "Duskwhisper", "Skiffspear", "Sugarfish", "Queenie", "Jeglid", "Tucker", "Ron", "Dewie", "Jaeger",
+    "Flutternym", "Snowy", "Lana", "Turbo", "Sol", "Lun", "Nimbus",
+    "Bloomville", "Starfall Valley", "Echoback Landing", "Driftwise Meadow", "Sandcastle Hill",
+    "Rosetower Wood", "Zephyr Coast", "Zephyrus Landbridge", "Breezy Plains", "Whisperwake",
+    "Mirrorsea Village", "Shige City", "Rosy Mirelands", "Lost Isles", "Secluded Seas", "Roaring Rapids",
+    "Russet Highlands", "Bloom Festival", "Egg Heist", "Wild Surge", "Veinwalker Assessment",
+    "Flame Flower", "Trailblazer"
+  ]
+}

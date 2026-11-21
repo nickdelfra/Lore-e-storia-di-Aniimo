@@ -52,16 +52,58 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
 e = html.escape
 
 
+NOMI = json.loads((ROOT / "contenuti" / "nomi.json").read_text(encoding="utf-8"))
+_alt = "|".join(re.escape(n) for n in sorted(NOMI["nomi"], key=len, reverse=True))
+RE_NOMI = re.compile(r"(?<![\w-])(" + _alt + r")(?![\w-])")
+
+
 def testo(s):
-    s = re.sub(r"</strong>", ": ", s)
     s = re.sub(r"<[^>]+>", "", s)
     return re.sub(r"\s+", " ", html.unescape(s)).strip()
+
+
+def didascalia(s):
+    return testo(s.replace("</strong>", ": "))
+
+
+def grassetto(corpo):
+    """Mette in grassetto i nomi propri inglesi nei paragrafi (non nelle avvertenze, nei link o nel corsivo)."""
+    visti = set()
+    tutte = NOMI.get("modo") == "tutte"
+
+    def paragrafo(m):
+        if 'class="callout"' in m.group(1):
+            return m.group(0)
+        out, chiuso = [], 0
+        for tok in re.split(r"(<[^>]+>)", m.group(2)):
+            if tok.startswith("<"):
+                if re.match(r"<(a|em|strong)[\s>]", tok):
+                    chiuso += 1
+                elif re.match(r"</(a|em|strong)>", tok):
+                    chiuso -= 1
+                out.append(tok)
+                continue
+            if chiuso:
+                out.append(tok)
+                continue
+
+            def nome(n):
+                if not tutte and n.group(1) in visti:
+                    return n.group(0)
+                visti.add(n.group(1))
+                return f'<strong class="nome">{n.group(1)}</strong>'
+            out.append(RE_NOMI.sub(nome, tok))
+        return m.group(1) + "".join(out) + "</p>"
+
+    return re.sub(r"(<p\b[^>]*>)(.*?)</p>", paragrafo, corpo, flags=re.S)
 
 
 def etichetta(p):
     n = p["numero"]
     if n == "Prologo":
         return "Pr"
+    if n == "Introduzione":
+        return "In"
     m = re.match(r"Capitolo (\d+)", n)
     return m.group(1) if m else "—"
 
@@ -84,6 +126,7 @@ def prepara(p):
     corpo = re.sub(r"<(p|li|figure)(?=[\s>])([^>]*)>|<div>(?=<dt>)", rep, raw)
     if p["gruppo"] == "racconto":  # capolettera sul primo paragrafo (non sulle avvertenze)
         corpo = re.sub(r'<p id="(b\d+)">', r'<p id="\1" class="dropcap">', corpo, count=1)
+        corpo = grassetto(corpo)
 
     righe = []
     for m in re.finditer(r'<p id="(b\d+)"[^>]*>(.*?)</p>|<li id="(b\d+)"[^>]*>(.*?)</li>|'
@@ -95,14 +138,14 @@ def prepara(p):
         elif g[2]:
             i, t = g[2], testo(g[3])
         elif g[4]:
-            i, t = g[4], testo(g[5])
+            i, t = g[4], didascalia(g[5])
         else:
             i, t = g[6], testo(g[7]) + ": " + testo(g[8])
         if t:
             righe.append({"s": p["slug"], "t": p["titolo"], "n": p["numero"], "i": i, "x": t})
 
     img = re.search(r'<img src="([^"]+)"', raw)
-    p["cover"] = img.group(1) if img else None
+    p["cover"] = img.group(1) if img else p.get("copertina")
     p["corpo"] = corpo
     p["parole"] = len(testo(raw).split())
     p["minuti"] = max(1, math.ceil(p["parole"] / 200))
@@ -152,8 +195,9 @@ def indice():
 def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
     social = " · ".join(f'<a href="{u}" target="_blank" rel="noopener">{n}</a>' for n, u in SOCIAL)
     return f"""<!DOCTYPE html>
-<html lang="it">
+<html lang="it" data-modo="scuro">
 <head>
+<script>try{{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}}catch(e){{}}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{e(titolo)}</title>
@@ -174,6 +218,7 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="{kind}">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
 <a class="skip" href="#page">Vai al testo</a>
 <div id="scrollProgress"></div>
 
@@ -181,6 +226,7 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
   <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
   <span class="crumb" id="crumb">{e(crumb)}</span>
   <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
     <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)">{ICON_SEARCH}</button>
     <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer">{ICON_MENU}<span>Indice</span></button>
   </div>
@@ -198,7 +244,7 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
 {main}
 
 <footer class="site-footer">
-  <div class="brandline">Lore di Aniimo · prima edizione in italiano</div>
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
   <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
   <div class="socials">{social}</div>
   <div class="support"><a href="{PAYPAL}" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
@@ -207,16 +253,19 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
 <audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
 <aside class="player" id="player" aria-label="Lettore musicale">
   <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
   <div class="player-body">
-    <div class="track-row"><span class="track-title">MALO · March of Progress</span><span class="time" id="timeLabel">0:00 / 0:00</span></div>
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
     <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
-    <div class="ctrl-row">
+    <div class="ctrl-row"><div>
       <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
-      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.2" aria-label="Volume">
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
       <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
-    </div>
+    </div></div>
     <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
   </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
   <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
 </aside>
 
@@ -229,23 +278,31 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
 def main_capitolo(i, p):
     prec = PAGINE[i - 1] if i > 0 else None
     succ = PAGINE[i + 1] if i < len(PAGINE) - 1 else None
+    casa = PAGINE[0].get("anteprima")
+
+    def scheda_pager(cls, href, rel, sopra, titolo, img):
+        th = f'<span class="pthumb"><img src="{img}" alt="" loading="lazy" decoding="async"></span>' if img else ""
+        r = f' rel="{rel}"' if rel else ""
+        return (f'<a class="{cls}" href="{href}"{r}>{th}<span class="ptext"><small>{sopra}</small>'
+                f'<b>{titolo}</b></span></a>')
     if prec:
-        pr = f'<a class="prev" href="{prec["slug"]}.html" rel="prev"><small>← {e(prec["numero"])}</small><b>{e(prec["titolo"])}</b></a>'
+        pr = scheda_pager("prev", f'{prec["slug"]}.html', "prev", f'← {e(prec["numero"])}', e(prec["titolo"]), prec.get("anteprima"))
     else:
-        pr = '<a class="prev" href="index.html"><small>← Indice</small><b>Pagina iniziale</b></a>'
+        pr = scheda_pager("prev", "index.html", "", "← Indice", "Pagina iniziale", casa)
     if succ:
-        nx = f'<a class="next" href="{succ["slug"]}.html" rel="next"><small>{e(succ["numero"])} →</small><b>{e(succ["titolo"])}</b></a>'
+        nx = scheda_pager("next", f'{succ["slug"]}.html', "next", f'{e(succ["numero"])} →', e(succ["titolo"]), succ.get("anteprima"))
     else:
-        nx = '<a class="next" href="index.html"><small>Fine →</small><b>Torna alla pagina iniziale</b></a>'
+        nx = scheda_pager("next", "index.html", "", "Fine →", "Torna alla pagina iniziale", casa)
     extra = p.get("extra", "")
     meta = f'{p["minuti"]} min di lettura'
     if p["figure"]:
         meta += f' · {p["figure"]} illustrazion{"e" if p["figure"] == 1 else "i"}'
     if p["cover"]:
-        hero = f'<header class="chapter-hero" style="background-image:{SFONDO_CAPITOLO},url(\'{p["cover"]}\')">'
+        hero = (f'<header class="chapter-hero"><div class="hero-bg" '
+                f'style="background-image:{SFONDO_CAPITOLO},url(\'{p["cover"]}\')"></div>')
     else:
         hero = '<header class="chapter-hero no-cover">'
-    return f"""<main id="page" class="chapter-page" data-slug="{p['slug']}" data-crumb="{e(crumb_di(p))}" tabindex="-1">
+    return f"""<main id="page" class="chapter-page" data-slug="{p['slug']}" data-indice="{i + 1}" data-totale="{len(PAGINE)}" data-crumb="{e(crumb_di(p))}" tabindex="-1">
   {hero}
     <div class="inner">
       <p class="chapter-label">{e(p['numero'])}</p>
@@ -279,14 +336,14 @@ def main_home():
     extra = [p for p in PAGINE if p["gruppo"] == "extra"]
     schede = "".join(scheda(p, first=(k == 0)) for k, p in enumerate(racconto))
     schede2 = "".join(scheda(p) for p in extra)
-    return f"""<main id="page" class="home" data-slug="home" data-crumb="" tabindex="-1">
-  <section class="home-hero" style="background-image:{SFONDO_HOME},url('{HERO_IMG}')">
+    return f"""<main id="page" class="home" data-slug="home" data-indice="0" data-totale="{len(PAGINE)}" data-crumb="" tabindex="-1">
+  <section class="home-hero"><div class="hero-bg" style="background-image:{SFONDO_HOME},url('{HERO_IMG}')"></div>
     <div class="inner">
       <p class="kicker">Raccolta in italiano della lore e della storia del gioco</p>
       <h1 class="display">Lore di Aniimo</h1>
       <p class="subtitle">I capitoli del mondo di gioco</p>
       <div class="cta">
-        <a class="btn primary" href="prologo.html">Inizia dal prologo</a>
+        <a class="btn primary" href="introduzione.html">Inizia a leggere</a>
         <a class="btn" href="#capitoli">Sfoglia i capitoli</a>
       </div>
     </div>
@@ -294,7 +351,7 @@ def main_home():
   <p class="intro">{INTRO}</p>
   <div class="section-head" id="capitoli">
     <h2>Il racconto</h2>
-    <p>Un prologo e nove capitoli, dalla fine della Terra alla storia che vive il giocatore.</p>
+    <p>Un'introduzione, un prologo e nove capitoli, dalla fine della Terra alla storia che vive il giocatore.</p>
   </div>
   <div class="cards">{schede}</div>
   <div class="section-head">
@@ -305,6 +362,20 @@ def main_home():
 </main>"""
 
 
+def collega(p, per_slug):
+    """Link «@pagina#Nome» → paragrafo della pagina in cui il nome compare per la prima volta."""
+    def rep(m):
+        dest, nome = m.group(1), html.unescape(m.group(2))
+        q = per_slug.get(dest)
+        if q:
+            for b in re.finditer(r'<(p|figure|li|div) id="(b\d+)"[^>]*>(.*?)</\1>', q["corpo"], re.S):
+                if nome in testo(b.group(3)):
+                    return f'href="{dest}.html#{b.group(2)}"'
+        print(f"  attenzione: «{nome}» non trovato in {dest}, collego la pagina")
+        return f'href="{dest}.html"'
+    p["corpo"] = re.sub(r'href="@([\w-]+)#([^"]+)"', rep, p["corpo"])
+
+
 def scrivi(nome, contenuto):
     (ROOT / nome).write_text(contenuto, encoding="utf-8")
 
@@ -313,6 +384,9 @@ def main():
     for p in PAGINE:
         prepara(p)
         p["anteprima"] = anteprima(p)
+    per_slug = {p["slug"]: p for p in PAGINE}
+    for p in PAGINE:
+        collega(p, per_slug)
 
     scrivi("index.html", pagina(
         f"{SITO['nome']} — La storia e i capitoli del mondo di gioco", SITO["descrizione"], BASE, HERO_IMG,
