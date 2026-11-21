@@ -157,7 +157,7 @@ def anteprima(p):
     """Anteprima piccola per le schede della pagina iniziale (se Pillow non c'è, usa l'originale)."""
     if not p["cover"]:
         return None
-    out = ROOT / "assets" / "img" / "_anteprime" / f"{p['slug']}.jpg"
+    out = ROOT / "assets" / "img" / "anteprime" / f"{p['slug']}.jpg"
     if out.exists() and out.stat().st_mtime >= (ROOT / p["cover"]).stat().st_mtime:
         return out.relative_to(ROOT).as_posix()
     try:
