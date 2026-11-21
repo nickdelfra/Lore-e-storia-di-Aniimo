@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it" data-modo="scuro">
+<head>
+<script>try{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prima di cominciare — Lore di Aniimo</title>
+<meta name="description" content="Una mappa del viaggio: cosa racconta ogni capitolo, dove trovarlo e come usare indice, ricerca, giorno e notte e musica.">
+<meta name="author" content="Nicola del Francia">
+<meta name="theme-color" content="#0a1322">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Prima di cominciare — Lore di Aniimo">
+<meta property="og:description" content="Una mappa del viaggio: cosa racconta ogni capitolo, dove trovarlo e come usare indice, ricerca, giorno e notte e musica.">
+<meta property="og:url" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/introduzione.html">
+<meta property="og:image" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/assets/img/02-idyll/life-in-idyll.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230a1322' stroke='%23d3b36a' stroke-width='2'/%3E%3Cpath d='M16 6l2.6 7.4L26 16l-7.4 2.6L16 26l-2.6-7.4L6 16l7.4-2.6z' fill='%23d3b36a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="capitolo">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
+<a class="skip" href="#page">Vai al testo</a>
+<div id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
+  <span class="crumb" id="crumb">Introduzione</span>
+  <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
+    <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="introduzione.html" data-slug="introduzione"><span class="n">In</span><span>Prima di cominciare</span></a></li><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
+  <div class="search-panel">
+    <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</div>
+
+<main id="page" class="chapter-page" data-slug="introduzione" data-indice="1" data-totale="14" data-crumb="Introduzione" tabindex="-1">
+  <header class="chapter-hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/02-idyll/life-in-idyll.jpeg')"></div>
+    <div class="inner">
+      <p class="chapter-label">Introduzione</p>
+      <h1 class="chapter-title">Prima di cominciare</h1>
+      <p class="chapter-meta">3 min di lettura</p>
+    </div>
+  </header>
+  <article class="prose ">
+<p id="b1" class="dropcap">Prima di aprire il libro, conviene sapere dove si sta andando. Questa raccolta racconta il mondo di <strong class="nome">Aniimo</strong> come si racconterebbe una storia davanti al fuoco: un passo alla volta, dalla notte più profonda fino all'alba. Ogni capitolo è una tappa, e ogni tappa si può leggere da sola oppure seguendo il filo dall'inizio alla fine.</p>
+<h2>Il cammino dei capitoli</h2>
+<p id="b2">Si comincia dal <a href="prologo.html">Prologo</a>, che racconta in poche pagine tutta la storia: la Terra perduta, il viaggio verso <strong class="nome">Idyll</strong>, i nove <a href="prologo.html#b3">Aeon</a> e la ferita delle Vene. Poi si sale in alto, ad <a href="astra.html">Astra</a>, la città sospesa da cui partono le spedizioni dell'Istituto Polaris, con i loro strumenti come l'<a href="astra.html#b5">Aniipod</a>. Da lassù si scende su <a href="idyll.html">Idyll</a>, il continente selvaggio, tra le rovine dell'Antica Idyll e i <a href="idyll.html#b7">Santuari</a> costruiti per guarire la terra.</p>
+<p id="b3">Il cuore del racconto sono le creature e chi le accompagna. <a href="aniimo.html">Gli Aniimo</a> abitano ogni angolo del continente e padroneggiano l'Energia Elementale; <a href="pathfinder.html">il Pathfinder</a> è chi apre la strada, il ruolo che vive il giocatore; e <a href="twine.html">il Twine (intreccio)</a> è il legame che li unisce, fino a fondersi con la creatura e usarne i movimenti e le abilità.</p>
+<p id="b4">Sotto i loro passi scorrono <a href="vene.html">le Vene</a>, la rete di energia che tiene viva Idyll, con i Rami, le Fioriture, l'Ambra Lumin e il Flusso Prismana. Il viaggio prosegue verso <a href="costa-dello-zefiro.html">la Costa dello Zefiro</a>, la terra dell'<strong class="nome">Aeon</strong> <strong class="nome">Aeolus</strong>, dove il mistero di <a href="costa-dello-zefiro.html#b5">Irelia</a> lega il passato della costa al suo presente. Poi lo sguardo si ferma sui <a href="leggende.html">murali e le leggende</a> dipinte nelle grotte, come quella di <a href="leggende.html#b1">Helgon</a>. Alla fine arriva <a href="storia-principale.html">la storia principale</a>, quella che il giocatore vive in prima persona a partire da <a href="storia-principale.html#b3">Starfall Valley</a>: attenzione, lì la trama è raccontata fino in fondo.</p>
+<p id="b5">Chiudono il libro tre pagine di servizio: il <a href="glossario.html">glossario</a>, per ritrovare il significato di una parola; la <a href="conclusione.html">conclusione</a>, che racconta che gioco è Aniimo; e le <a href="fonti.html">fonti e i crediti</a>, con le pagine consultate e i diritti di immagini e musica.</p>
+<h2>Come leggere questa raccolta</h2>
+<ul class="guida">
+  <li id="b6"><strong>Indice</strong>: il pulsante in alto a destra apre l'elenco dei capitoli, da qualsiasi pagina.</li>
+  <li id="b7"><strong>Ricerca</strong>: la lente, o il tasto «/» sulla tastiera, cerca un nome, un luogo o una parola in tutto il testo e porta dritto al paragrafo.</li>
+  <li id="b8"><strong>Giorno e notte</strong>: l'interruttore con la luna e il sole passa dal tema scuro al tema chiaro. Nel tema scuro, scorrendo la pagina, il cielo va dalla notte all'alba.</li>
+  <li id="b9"><strong>Musica</strong>: «March of Progress» di MALO parte al primo tocco, a volume basso. Il lettore in basso a destra la mette in pausa, regola il volume o si riduce a una piccola pillola.</li>
+  <li id="b10"><strong>Fine capitolo</strong>: in fondo a ogni pagina due schede portano al capitolo precedente e a quello successivo.</li>
+</ul>
+<p id="b11">Un'ultima nota: i nomi propri restano in inglese, come nel gioco, e la prima volta che compaiono in una pagina sono scritti in grassetto. Buona lettura, e buon viaggio a Idyll.</p>
+
+  </article>
+  <nav class="pager" aria-label="Capitolo precedente e successivo">
+    <a class="prev" href="index.html"><span class="pthumb"><img src="assets/img/anteprime/introduzione.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>← Indice</small><b>Pagina iniziale</b></span></a>
+    <a class="next" href="prologo.html" rel="next"><span class="pthumb"><img src="assets/img/anteprime/prologo.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>Prologo →</small><b>La storia di Aniimo</b></span></a>
+  </nav>
+  <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
+  <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
+  <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
+  <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
+</footer>
+
+<audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
+<aside class="player" id="player" aria-label="Lettore musicale">
+  <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="player-body">
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
+    <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
+    <div class="ctrl-row"><div>
+      <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
+      <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
+    </div></div>
+    <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
+  </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
+  <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
+</aside>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

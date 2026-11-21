@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="it" data-modo="scuro">
+<head>
+<script>try{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gli Aniimo — Lore di Aniimo</title>
+<meta name="description" content="Le creature di Idyll: forme, abitudini, Energia Elementale ed evoluzioni.">
+<meta name="author" content="Nicola del Francia">
+<meta name="theme-color" content="#0a1322">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Gli Aniimo — Lore di Aniimo">
+<meta property="og:description" content="Le creature di Idyll: forme, abitudini, Energia Elementale ed evoluzioni.">
+<meta property="og:url" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/aniimo.html">
+<meta property="og:image" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/assets/img/03-aniimo/gli-aniimo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230a1322' stroke='%23d3b36a' stroke-width='2'/%3E%3Cpath d='M16 6l2.6 7.4L26 16l-7.4 2.6L16 26l-2.6-7.4L6 16l7.4-2.6z' fill='%23d3b36a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="capitolo">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
+<a class="skip" href="#page">Vai al testo</a>
+<div id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
+  <span class="crumb" id="crumb">Capitolo 3 · Gli Aniimo</span>
+  <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
+    <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="introduzione.html" data-slug="introduzione"><span class="n">In</span><span>Prima di cominciare</span></a></li><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
+  <div class="search-panel">
+    <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</div>
+
+<main id="page" class="chapter-page" data-slug="aniimo" data-indice="5" data-totale="14" data-crumb="Capitolo 3 · Gli Aniimo" tabindex="-1">
+  <header class="chapter-hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/03-aniimo/gli-aniimo.jpg')"></div>
+    <div class="inner">
+      <p class="chapter-label">Capitolo 3</p>
+      <h1 class="chapter-title">Gli Aniimo</h1>
+      <p class="chapter-meta">4 min di lettura · 2 illustrazioni</p>
+    </div>
+  </header>
+  <article class="prose ">
+<figure id="b1" class="illustration">
+  <img src="assets/img/03-aniimo/gli-aniimo.jpg" width="1280" height="720" decoding="async" loading="lazy" alt="Cinque Aniimo chiari e pastello seduti sull'erba in riva a uno stagno luminoso, circondati da farfalle; i loro riflessi si vedono nell'acqua.">
+  <figcaption><strong>Gli Aniimo</strong>creature di forme e colori diversi, riflesse in uno stagno tra le farfalle.</figcaption>
+</figure>
+<p id="b2" class="dropcap">Chi sono, dunque, gli <strong class="nome">Aniimo</strong>? È il nome collettivo delle creature che abitano <strong class="nome">Idyll</strong>: di forme e abitudini molto varie, padroneggiano l'Energia Elementale e possono evolversi. Gli sviluppatori le presentano come esseri magici, ciascuna con una personalità, abilità e un proprio modo di adattarsi al continente. Ma per il <strong class="nome">Pathfinder</strong> non sono soltanto compagni di viaggio: grazie al <strong class="nome">Twine</strong> (intreccio), il legame che unisce umani e Aniimo, il giocatore può fondersi con una creatura e usarne il corpo, i movimenti e le abilità come fossero i suoi. È questa fusione a rendere ogni Aniimo diverso dagli altri anche nel modo di giocare: scegliere con chi intrecciarsi significa scegliere come muoversi e come combattere.</p>
+<p id="b3">Ogni creatura porta con sé una natura e ha uno o due dei nove elementi (Fuoco, Acqua, Erba, Fulmine, Ghiaccio, Terra, Vento, Luce, Buio), che decidono contro chi è forte o debole, e in battaglia occupa uno dei cinque ruoli: DPS, Heal, Support, Break ed Energy, detto anche Regen. Poi c'è il tempo, o meteo, che la cambia costantemente e permette di trovare Aniimo di diverse forme nelle varie regioni. L'evoluzione è una tappa fondamentale della crescita: rafforza le abilità e cambia l'aspetto, e alcuni Aniimo, in base ai fattori che li influenzano mentre crescono, possono ramificarsi in individui diversi. E per sopravvivere, la stessa specie può assumere Forme diverse a seconda di regione, clima, momento della giornata o ambienti particolari; la Forma più rara compare soltanto in ambiente Prismana, figlia del Flusso Prismana di cui parleremo nel Capitolo 6.</p>
+<figure id="b4" class="illustration">
+  <img src="assets/img/03-aniimo/form.jpg" width="1280" height="720" decoding="async" loading="lazy" alt="Lo stesso Aniimo a forma di fiore in quattro Forme: azzurra tra fiori blu, rossastra tra margherite, viola in un prato rosa e giallo-verde tra l'erba.">
+  <figcaption><strong>Form</strong>la stessa creatura in quattro Forme, ognuna con i colori del suo ambiente.</figcaption>
+</figure>
+<p id="b5">Come vivono, quando nessuno li guarda? Reagiscono all'ambiente e cambiano comportamento di conseguenza. Budclaw, ad esempio, è un Aniimo simile a un granchio, timido e bravo a scavare e a muoversi su terreni diversi, ma vede poco sottoterra: se urta una roccia si stordisce, e diventa più facile da catturare. Nimbi, una pecora a forma di nuvola, è leggerissima e capace di salti altissimi, e durante i temporali si comporta in modo molto diverso. Quali Aniimo compaiono dipende da ambiente, meteo, fenomeni e ora del giorno; tra i biomi ci sono <strong class="nome">Driftwise Meadow</strong>, <strong class="nome">Sandcastle Hill</strong> e <strong class="nome">Rosetower Wood</strong>. Con il Twine il giocatore entra persino nella loro società, fatta di scambi e abitudini quotidiane. E chi vuole catturarli farà bene ad avvicinarsi da dietro, nascosto tra erba alta e fiori, oppure ad approfittare del loro sonno.</p>
+<p id="b6">E cosa fanno? Dipende da dove li trovi. Quando il Pathfinder si fonde con loro, le loro capacità diventano il modo di attraversare il mondo: non esiste una cavalcatura separata, ma ogni Aniimo ha un proprio tratto di mobilità, e c'è chi scatta, chi plana, chi nuota, chi si arrampica e chi scava. Flameruff apre le aree bloccate dal fuoco, <strong class="nome">Celestis</strong> permette di scalare le pareti e planare tra le cime, <strong class="nome">Skippy</strong> si occupa dell'acqua. In battaglia, che è in tempo reale, ogni ruolo ha il suo compito: gli Aniimo Break, per esempio, puntano a esaurire la barra del nemico, che così resta stordito e subisce danni extra.</p>
+<p id="b7">Quando non sono in fusione con il Pathfinder, gli Aniimo hanno una vita propria, e una casa. Nascono dalle uova, che si incubano nell'<strong class="nome">Hatchinator</strong>. Nell'<strong class="nome">Homeland</strong>, a casa del Pathfinder, gli Aniimo catturati diventano operai che coltivano, scavano, producono e preparano bevande mentre il giocatore esplora: basta trascinare una creatura dalla riserva alla casa e, se le sue abilità corrispondono alle strutture, lavora da sola. Contano elemento, abilità di lavoro e personalità, e se questa coincide con quella consigliata dalla struttura il rendimento sale. Gli Aniimo Luce illuminano la casa, quelli Buio raccolgono, tagliano ed essiccano, gli addetti al trasporto portano i prodotti al magazzino e senza di loro la produzione si blocca, e tutti hanno bisogno di cibo, che si mette nelle ciotole. Eppure, per quanto operosi, gli Aniimo sanno diventare qualcosa di più per chi li accompagna, ed è questo il segreto che ci porta ai Capitoli 4 e 5: prima chi li accompagna, il Pathfinder, poi il legame che li unisce, il Twine.</p>
+
+  </article>
+  <nav class="pager" aria-label="Capitolo precedente e successivo">
+    <a class="prev" href="idyll.html" rel="prev"><span class="pthumb"><img src="assets/img/anteprime/idyll.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>← Capitolo 2</small><b>Idyll e l&#x27;Antica Idyll</b></span></a>
+    <a class="next" href="pathfinder.html" rel="next"><span class="pthumb"><img src="assets/img/anteprime/pathfinder.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>Capitolo 4 →</small><b>Il Pathfinder</b></span></a>
+  </nav>
+  <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
+  <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
+  <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
+  <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
+</footer>
+
+<audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
+<aside class="player" id="player" aria-label="Lettore musicale">
+  <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="player-body">
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
+    <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
+    <div class="ctrl-row"><div>
+      <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
+      <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
+    </div></div>
+    <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
+  </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
+  <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
+</aside>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

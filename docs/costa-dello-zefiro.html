@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="it" data-modo="scuro">
+<head>
+<script>try{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Costa dello Zefiro — Lore di Aniimo</title>
+<meta name="description" content="La terra dell&#x27;Aeon Aeolus: le Pianure Ventose, Bloomville e il mistero di Irelia.">
+<meta name="author" content="Nicola del Francia">
+<meta name="theme-color" content="#0a1322">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="La Costa dello Zefiro — Lore di Aniimo">
+<meta property="og:description" content="La terra dell&#x27;Aeon Aeolus: le Pianure Ventose, Bloomville e il mistero di Irelia.">
+<meta property="og:url" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/costa-dello-zefiro.html">
+<meta property="og:image" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/assets/img/07-costa-zefiro/zephyr-coast.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230a1322' stroke='%23d3b36a' stroke-width='2'/%3E%3Cpath d='M16 6l2.6 7.4L26 16l-7.4 2.6L16 26l-2.6-7.4L6 16l7.4-2.6z' fill='%23d3b36a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="capitolo">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
+<a class="skip" href="#page">Vai al testo</a>
+<div id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
+  <span class="crumb" id="crumb">Capitolo 7 · Costa dello Zefiro</span>
+  <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
+    <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="introduzione.html" data-slug="introduzione"><span class="n">In</span><span>Prima di cominciare</span></a></li><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
+  <div class="search-panel">
+    <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</div>
+
+<main id="page" class="chapter-page" data-slug="costa-dello-zefiro" data-indice="9" data-totale="14" data-crumb="Capitolo 7 · Costa dello Zefiro" tabindex="-1">
+  <header class="chapter-hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/07-costa-zefiro/zephyr-coast.jpeg')"></div>
+    <div class="inner">
+      <p class="chapter-label">Capitolo 7</p>
+      <h1 class="chapter-title">La Costa dello Zefiro</h1>
+      <p class="chapter-meta">3 min di lettura · 2 illustrazioni</p>
+    </div>
+  </header>
+  <article class="prose ">
+<figure id="b1" class="illustration">
+  <img src="assets/img/07-costa-zefiro/zephyr-coast.jpeg" width="1376" height="768" decoding="async" loading="lazy" alt="Spiaggia con palme e sabbia rosa, acqua turchese e grandi archi bianchi ricurvi; due piccoli Aniimo bianchi con il muso azzurro nuotano tra le onde, sotto nuvole rosa.">
+  <figcaption><strong>Zephyr Coast</strong>la Costa dello Zefiro: mare turchese, sabbia rosa e giganteschi archi bianchi che ricordano costole, con piccoli Aniimo che nuotano.</figcaption>
+</figure>
+<p id="b2" class="dropcap">Ci sono luoghi dove il vento ha una voce, e la Costa dello Zefiro (<strong class="nome">Zephyr Coast</strong>) è uno di questi. È la terra dell'<strong class="nome">Aeon</strong> <strong class="nome">Aeolus</strong>, fertile e varia: prati verdi, isole sul mare e terra calda, ed è la macro-regione in cui comincia l'avventura. Le brezze marine portano il profumo di <strong class="nome">Duskwhisper</strong>, le onde suonano la melodia delle maree e gemme splendenti nascono dalla danza delle fiamme della terra. Il vento governa la costa attraverso Aeolus, mentre le maree rappresentano le isole dell'arcipelago.</p>
+<p id="b3">Percorrendola si incontrano prima le Pianure Brezzose (<strong class="nome">Breezy Plains</strong>), l'area di partenza protetta per i primi passi, verdi pianure amate dal vento, dove sabbie argentee cuciono insieme mare blu e colline; nuvole basse vagano sui prati e ai piedi delle alture innevate un mare di fiori dipinge il paesaggio, con un piccolo villaggio di profumieri. Più al largo si stende l'arcipelago azzurro delle Isole <strong class="nome">Whisperwake</strong>, spezzato dalle maree, dove ogni isola ha il suo carattere: Bubble Drift fluttua serena come un sogno, cascate d'argento scuotono i crinali, e ossa di corallo appassite diventano solitari banchi di sabbia dove neve e ghiaccio custodiscono gli anni. Tra i luoghi abitati, <strong class="nome">Bloomville</strong>, chiamata «il luogo dove i fiori sbocciano in abbondanza», è celebre per fiori e profumi: ogni dieci anni vi si tiene la grande Festa della Fioritura (<strong class="nome">Bloom Festival</strong>), in cui gli abitanti offrono i profumi fatti a mano e attendono la benedizione dei Guardiani. Sulle scogliere delle Whisperwake sorge il <strong class="nome">Mirrorsea Village</strong>, dove hanno trovato casa i sopravvissuti al naufragio di <strong class="nome">Shige City</strong>, tra alghe ad asciugare al vento, ulivi nei boschi scuri e umani e <strong class="nome">Aniimo</strong> che vivono fianco a fianco in una vita semplice e calda. Azureville è invece la grande città tra le isole. Più avanti, nelle zone di livello alto, si apre lo <strong class="nome">Zephyrus Landbridge</strong>, e a nord-ovest si trova un gruppo di isole vulcaniche.</p>
+<figure id="b4" class="illustration">
+  <img src="assets/img/07-costa-zefiro/bloomville.jpeg" width="1365" height="768" decoding="async" loading="lazy" alt="Villaggio di case bianche con tetti rossi e verdi tra campi di lavanda viola, due mulini a vento, un ruscello e montagne innevate sullo sfondo.">
+  <figcaption><strong>Bloomville</strong>la città dei fiori e dei profumi, con case bianche dai tetti rossi, mulini a vento e campi di lavanda a perdita d'occhio.</figcaption>
+</figure>
+<p id="b5">Eppure la costa porta i segni di una ferita antica. Cent'anni fa le Vene si spezzarono e il potere di <strong class="nome">Protos</strong> sfuggì al controllo: le maree diventarono sempre più caotiche e persino il tempo che Protos governa cadde nel disordine. Una tempesta violenta ha isolato la Terra delle Maree trascinando con sé frammenti di tempo; può intrappolare chi vi entra fino a farlo svanire, e solo brevi tratti di canto, portati da spruzzi improvvisi, arrivano all'esterno. Di quel secolo di cambiamenti parla la leggenda di <strong class="nome">Irelia</strong>, che trovi nel Capitolo 8.</p>
+
+  </article>
+  <nav class="pager" aria-label="Capitolo precedente e successivo">
+    <a class="prev" href="vene.html" rel="prev"><span class="pthumb"><img src="assets/img/anteprime/vene.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>← Capitolo 6</small><b>Le Vene</b></span></a>
+    <a class="next" href="leggende.html" rel="next"><span class="pthumb"><img src="assets/img/anteprime/leggende.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>Capitolo 8 →</small><b>Leggende e murali</b></span></a>
+  </nav>
+  <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
+  <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
+  <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
+  <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
+</footer>
+
+<audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
+<aside class="player" id="player" aria-label="Lettore musicale">
+  <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="player-body">
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
+    <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
+    <div class="ctrl-row"><div>
+      <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
+      <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
+    </div></div>
+    <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
+  </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
+  <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
+</aside>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

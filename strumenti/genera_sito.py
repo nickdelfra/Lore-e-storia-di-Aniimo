@@ -2,15 +2,16 @@
 """Genera il sito a più pagine di «Lore di Aniimo».
 
 Come funziona
-  contenuti/capitoli.json   elenco e metadati delle pagine (titolo, numero, descrizione)
-  contenuti/<pagina>.html   testo e immagini di ogni pagina (solo il corpo, senza menu)
-  tools/build.py            unisce testi e modello e scrive le pagine finali
+  contenuti/capitoli.json     elenco e metadati delle pagine (titolo, numero, descrizione)
+  contenuti/nomi.json         nomi propri inglesi da mettere in grassetto
+  contenuti/<pagina>.html     testo e immagini di ogni pagina (solo il corpo, senza menu)
+  strumenti/genera_sito.py    questo script: unisce testi e modello
+  docs/                       il sito pubblicato da GitHub Pages (pagine generate, stile, script, immagini, musica)
 
 Per modificare un testo: cambia il file in contenuti/ e lancia
-  python3 tools/build.py
-Le pagine generate (index.html, astra.html, ...) e assets/js/ricerca.json vanno poi
-pubblicate insieme ai file in contenuti/. Serve solo Python 3; Pillow, se presente,
-prepara le anteprime piccole per la pagina iniziale.
+  python3 strumenti/genera_sito.py
+Le pagine in docs/ e docs/assets/js/ricerca.json vengono riscritte: non modificarle a mano.
+Serve solo Python 3; Pillow, se presente, prepara le anteprime piccole delle schede.
 """
 import html
 import json
@@ -19,6 +20,7 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SITO_DIR = ROOT / "docs"  # cartella pubblicata da GitHub Pages
 DATA = json.loads((ROOT / "contenuti" / "capitoli.json").read_text(encoding="utf-8"))
 SITO = DATA["sito"]
 PAGINE = DATA["pagine"]
@@ -157,17 +159,17 @@ def anteprima(p):
     """Anteprima piccola per le schede della pagina iniziale (se Pillow non c'è, usa l'originale)."""
     if not p["cover"]:
         return None
-    out = ROOT / "assets" / "img" / "anteprime" / f"{p['slug']}.jpg"
-    if out.exists() and out.stat().st_mtime >= (ROOT / p["cover"]).stat().st_mtime:
-        return out.relative_to(ROOT).as_posix()
+    out = SITO_DIR / "assets" / "img" / "anteprime" / f"{p['slug']}.jpg"
+    if out.exists() and out.stat().st_mtime >= (SITO_DIR / p["cover"]).stat().st_mtime:
+        return out.relative_to(SITO_DIR).as_posix()
     try:
         from PIL import Image
         out.parent.mkdir(parents=True, exist_ok=True)
-        im = Image.open(ROOT / p["cover"]).convert("RGB")
+        im = Image.open(SITO_DIR / p["cover"]).convert("RGB")
         w = 720
         im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
         im.save(out, "JPEG", quality=80, optimize=True, progressive=True)
-        return out.relative_to(ROOT).as_posix()
+        return out.relative_to(SITO_DIR).as_posix()
     except Exception:
         return p["cover"]
 
@@ -377,7 +379,7 @@ def collega(p, per_slug):
 
 
 def scrivi(nome, contenuto):
-    (ROOT / nome).write_text(contenuto, encoding="utf-8")
+    (SITO_DIR / nome).write_text(contenuto, encoding="utf-8")
 
 
 def main():
@@ -399,8 +401,8 @@ def main():
             p["cover"] or HERO_IMG, "capitolo", main_capitolo(i, p), crumb_di(p)))
         ricerca.extend(p["ricerca"])
 
-    (ROOT / "assets" / "js").mkdir(parents=True, exist_ok=True)
-    (ROOT / "assets" / "js" / "ricerca.json").write_text(
+    (SITO_DIR / "assets" / "js").mkdir(parents=True, exist_ok=True)
+    (SITO_DIR / "assets" / "js" / "ricerca.json").write_text(
         json.dumps(ricerca, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Generate {len(PAGINE) + 1} pagine e {len(ricerca)} voci di ricerca.")
     for p in PAGINE:

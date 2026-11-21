@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it" data-modo="scuro">
+<head>
+<script>try{if(localStorage.getItem('aniimo-modo')==='chiaro')document.documentElement.dataset.modo='chiaro'}catch(e){}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La storia principale — Lore di Aniimo</title>
+<meta name="description" content="La trama vissuta dal giocatore, da Starfall Valley agli episodi di Bloomville. Contiene anticipazioni sulla storia.">
+<meta name="author" content="Nicola del Francia">
+<meta name="theme-color" content="#0a1322">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="La storia principale — Lore di Aniimo">
+<meta property="og:description" content="La trama vissuta dal giocatore, da Starfall Valley agli episodi di Bloomville. Contiene anticipazioni sulla storia.">
+<meta property="og:url" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/storia-principale.html">
+<meta property="og:image" content="https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/assets/img/09-storia-principale/aniimo-in-battaglia.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%230a1322' stroke='%23d3b36a' stroke-width='2'/%3E%3Cpath d='M16 6l2.6 7.4L26 16l-7.4 2.6L16 26l-2.6-7.4L6 16l7.4-2.6z' fill='%23d3b36a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="capitolo">
+<div id="sky" aria-hidden="true"><div class="strato notte"></div><div class="strato giorno"></div><canvas id="stars"></canvas><div class="orb"></div></div>
+<a class="skip" href="#page">Vai al testo</a>
+<div id="scrollProgress"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html" aria-label="Lore di Aniimo, pagina iniziale">ANIIMO</a>
+  <span class="crumb" id="crumb">Capitolo 9 · Storia principale</span>
+  <div class="tools">
+    <button class="switch" id="modeBtn" role="switch" aria-checked="false" aria-label="Tema chiaro"><span class="fill"></span><span class="knob"><span class="icon moon"></span><span class="icon sun"></span></span></button>
+    <button class="iconbtn" id="searchBtn" aria-label="Cerca nel testo (tasto /)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="iconbtn txt" id="tocBtn" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Indice</span></button>
+  </div>
+</header>
+
+<div id="scrim" hidden></div>
+<aside id="drawer" aria-label="Indice dei capitoli" aria-hidden="true"><div class="drawer-head"><h2>Indice</h2><button class="iconbtn" id="tocClose" aria-label="Chiudi l'indice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><nav class="drawer-body"><ol class="toc"><li><a href="index.html" data-slug="home"><span class="n">⌂</span><span>Pagina iniziale</span></a></li></ol><h3>Il racconto</h3><ol class="toc"><li><a href="introduzione.html" data-slug="introduzione"><span class="n">In</span><span>Prima di cominciare</span></a></li><li><a href="prologo.html" data-slug="prologo"><span class="n">Pr</span><span>La storia di Aniimo</span></a></li><li><a href="astra.html" data-slug="astra"><span class="n">1</span><span>Astra e l&#x27;Istituto Polaris</span></a></li><li><a href="idyll.html" data-slug="idyll"><span class="n">2</span><span>Idyll e l&#x27;Antica Idyll</span></a></li><li><a href="aniimo.html" data-slug="aniimo"><span class="n">3</span><span>Gli Aniimo</span></a></li><li><a href="pathfinder.html" data-slug="pathfinder"><span class="n">4</span><span>Il Pathfinder</span></a></li><li><a href="twine.html" data-slug="twine"><span class="n">5</span><span>Il Twine (intreccio)</span></a></li><li><a href="vene.html" data-slug="vene"><span class="n">6</span><span>Le Vene</span></a></li><li><a href="costa-dello-zefiro.html" data-slug="costa-dello-zefiro"><span class="n">7</span><span>La Costa dello Zefiro</span></a></li><li><a href="leggende.html" data-slug="leggende"><span class="n">8</span><span>Leggende e murali</span></a></li><li><a href="storia-principale.html" data-slug="storia-principale"><span class="n">9</span><span>La storia principale</span></a></li></ol><h3>Approfondimenti</h3><ol class="toc"><li><a href="glossario.html" data-slug="glossario"><span class="n">—</span><span>Le parole del mondo</span></a></li><li><a href="conclusione.html" data-slug="conclusione"><span class="n">—</span><span>Il mondo di Aniimo</span></a></li><li><a href="fonti.html" data-slug="fonti"><span class="n">—</span><span>Fonti e crediti</span></a></li></ol></nav></aside>
+<div id="search" role="dialog" aria-modal="true" aria-label="Cerca nel testo">
+  <div class="search-panel">
+    <div class="search-row"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="q" type="search" placeholder="Cerca un nome, un luogo, una parola…" autocomplete="off" aria-label="Cerca nel testo"><span class="kbd">Esc</span></div>
+    <ul id="results" aria-live="polite"></ul>
+  </div>
+</div>
+
+<main id="page" class="chapter-page" data-slug="storia-principale" data-indice="11" data-totale="14" data-crumb="Capitolo 9 · Storia principale" tabindex="-1">
+  <header class="chapter-hero"><div class="hero-bg" style="background-image:linear-gradient(180deg,rgba(10,19,34,.62) 0%,rgba(10,19,34,.86) 65%,#0a1322 100%),url('assets/img/09-storia-principale/aniimo-in-battaglia.jpeg')"></div>
+    <div class="inner">
+      <p class="chapter-label">Capitolo 9</p>
+      <h1 class="chapter-title">La storia principale</h1>
+      <p class="chapter-meta">6 min di lettura · 1 illustrazione</p>
+    </div>
+  </header>
+  <article class="prose ">
+<figure id="b1" class="illustration">
+  <img src="assets/img/09-storia-principale/aniimo-in-battaglia.jpeg" width="1364" height="768" decoding="async" loading="lazy" alt="Due Aniimo in combattimento: a sinistra una creatura bianca e dorata con grandi ali trasparenti e lame luminose, a destra una creatura nera e bianca dal pugno infuocato, davanti al logo Aniimo.">
+  <figcaption><strong>Aniimo in battaglia</strong>due Aniimo che combattono: a sinistra una creatura bianca e dorata, con grandi ali e lame luminose; a destra una creatura scura dal pugno di fuoco.</figcaption>
+</figure>
+<p id="b2" class="callout">Attenzione: da qui la trama è raccontata fino alla fine.</p>
+<p id="b3" class="dropcap">Ed eccoci alla storia che il giocatore vive in prima persona. Arrivi da <strong class="nome">Astra</strong> come osservatore speciale, con l'idea di raccontare la tua avventura in diretta. La guida <strong class="nome">Nicole</strong> ti insegna a catturare e <strong class="nome">Starfall Valley</strong> è il tuo parco giochi. Poi il tuo terminale, BINI #9, capta dati sconosciuti, impazzisce e viene inghiottito da un enorme cubo antico, che trascina dentro anche te. Nel profondo delle rovine, i murali mostrano umani e <strong class="nome">Aniimo</strong>; i simboli del sole e della luna si animano e diventano due piccoli Aniimo parlanti, <strong class="nome">Helion</strong> per il Sole e <strong class="nome">Lunara</strong> per la Luna. Accetti la benedizione di uno dei due, il cubo si risveglia, arrivano i rinforzi dell'Istituto e, facendo <strong class="nome">Twine</strong> con il nuovo compagno, riesci a respingerlo. Esausti, i due Aniimo tornano piccoli: il tuo resta con te, l'altro torna a dormire nel murale. Di nuovo ad Astra, il direttore <strong class="nome">Oswen</strong> ti invita a entrare nell'Istituto Polaris; ti iscrivi, diventi membro a pieno titolo della spedizione e <strong class="nome">Dr. Lewis</strong> ti rimanda a <strong class="nome">Idyll</strong>. È l'episodio <em>Journey to Idyll</em>.</p>
+<p id="b4">Il primo compito è guadagnare il riconoscimento del Ramo offrendogli Ambra Lumin. Mentre lasci l'Avamposto, un enorme Aniimo alato attraversa il cielo: lo vedete solo tu e il tuo compagno, che trova una piuma caduta vicino al Ramo. Poi si va ai Campi di <strong class="nome">Nimbus</strong>, dove la studentessa anziana <strong class="nome">Lana</strong> tiene la tua lezione introduttiva: infiltrarti in una famiglia di <strong class="nome">Emberpup</strong>, superare la prova di un Santuario, far evolvere il tuo Emberpup e sconfiggere un <strong class="nome">Turbo</strong>. Diventi studente ufficiale dell'Istituto, comincia l'Addestramento d'élite e arriva un invito alla <strong class="nome">Bloom Festival</strong> di <strong class="nome">Bloomville</strong>. È <em>Setting Out Again</em>.</p>
+<p id="b5">Sulla strada ogni Aniimo dorme: colpa di un incenso troppo forte, opera della profumiera <strong class="nome">Sunia</strong>. Davanti alla statua di bronzo del villaggio la piuma si illumina e ti trascina in un sogno, dove l'<strong class="nome">Aeon</strong> <strong class="nome">Aeolus</strong> si presenta, ti dice che il tuo cubo è il «Nucleo» e ti mostra cosa è successo nelle rovine: figure in tunica nera, con una copia del cubo, hanno portato via dal murale il compagno che non avevi scelto. Impari l'arte dei profumi, tra cristalli profumati (aromathyst) dei <strong class="nome">Dewie</strong>, raffinazione e miscele, e l'anziano <strong class="nome">Jaeger</strong> spiega la festa: ogni dieci anni appare l'<strong class="nome">Irisalis</strong> <strong class="nome">Irelia</strong>, i fiori sbocciano, il Prismana risplende e la regina dei <strong class="nome">Flutternym</strong>, <strong class="nome">Velouria</strong>, a volte concede una benedizione, come fece per Sunia dieci anni prima. Il giorno della festa, però, non succede nulla. Irelia non arriva, Velouria compare su un tetto a deridere la cerimonia, il villaggio va nel panico e Sunia, distrutta, vuole lasciare Bloomville. Partite insieme a chiedere risposte a Velouria. È <em>Journey to Bloomville</em>.</p>
+<p id="b6">Per entrare nella casa di Velouria serve un incenso fatto con il polline del Mare di Fiori. Lungo la strada Sunia spiega l'acromia: cent'anni fa la Vena si spezzò, il mondo perse i colori e i bambini nascevano incapaci di percepirli, finché Irelia salvò la terra restituendole i suoi. Nella valle i sogni rivelano il passato di Sunia: nata senza colori, pregò alla festa per vederli, e fu <strong class="nome">Snowy</strong>, il suo Iris, a pregare per donarle i propri; Velouria si limitò a collegare i due sogni. I fiori-sogno raccontano anche la storia di Velouria con Irelia: un giovane fiore che voleva raccogliere tutti i colori per vedere un giorno il Flusso Prismana, e una regina che la seguì per curiosità, trovandola poi «noiosa» quando Irelia rinunciò al suo sogno per curare la Vena. È <em>Flowers and Butterfly Shadows</em>.</p>
+<p id="b7">Velouria accetta di portarti da Irelia a una condizione: ricreare un'antica ricetta offerta un tempo agli Aeon, con una spezia verde dei Boschi di Nebbia, una blu di <strong class="nome">Echoback Landing</strong> e una rossa degli Altipiani Russet. A ogni profumo la voce di Aeolus racconta un frammento del passato di Irelia. Sulla Costa di Maréeflore, sotto l'Albero d'Ametista, trovi tre meccanismi che divorano i suoi colori. Irelia ti dice di essere stata intrappolata dalle tuniche nere in una falsa visione Prismana dieci giorni prima della festa e, soprattutto, spiega cosa fa da cent'anni: ogni «Bloom Festival» è una fusione un po' più profonda con la Vena, che rallenta la perdita di energia. Questa sarà l'ultima. Danza un'ultima volta: i fiori sbocciano, il Prismana accende il cielo e Irelia si trasforma in petali che tornano alla Vena. Velouria conclude che un Aniimo riconosciuto dalla Vena diventa un Guardiano, e che Irelia dormirà a lungo. Bloomville continua a portare fiori, Sunia parte in cerca di un sogno suo e un germoglio cresce nel cuore dell'Albero d'Ametista. È <em>Rainbow of the Ground</em>, e cambia il senso delle leggende del Capitolo 8.</p>
+<p id="b8">Intanto l'Addestramento d'élite fa salire di grado: ogni promozione ti porta davanti a uno studente anziano, da Studente di II Grado fino a <strong class="nome">Trailblazer</strong>. Durante la prova al <strong class="nome">Zephyrus Landbridge</strong>, il «<strong class="nome">Wendell</strong>» che ti accoglie getta la maschera: è una delle figure incappucciate. Parla di un'organizzazione, la Società <strong class="nome">Umbral</strong>, che vuole restituire a Idyll la gloria di un tempo, vi chiama te e una misteriosa «Santa» le «lune gemelle» destinate a illuminare il cielo e sostiene che il tuo compagno mancante sia con lei. Dr. Lewis sospetta un legame tra queste prove e un'usanza antichissima di Idyll.</p>
+<p id="b9">Al 9 novembre 2026 la <strong class="nome">Main Story</strong> conta ormai otto episodi: la storia di Bloomville ne occupa cinque, e gli ultimi tre si spostano sull'acqua. <em>A Tale of Tide and Song</em> è ambientato di notte a Echoback Landing, con un canto lontano nella brezza e le maree che avanzano; in <em>Secluded Seas</em> ci sono sabbie bianche e acque di lago quiete, una distesa isolata che custodisce storie antiche; chiude <em>Challenge of the Roaring Rapids</em>, in sella a uno <strong class="nome">Skiffspear</strong> dritto nelle rapide, tra maree ruggenti.</p>
+<p id="b10">Restano in sospeso molte domande. Dov'è l'altro compagno? Si sa solo che è vivo e, a quanto si dice, con la «Santa». Chi è la «Santa»? Il gioco non lo dice: in una scena notturna vicino a Irelia compare una ragazza in nero che prega perché <strong class="nome">Sol</strong> e <strong class="nome">Lun</strong> le rispondano, e svanisce prima che tu possa avvicinarti. Perché il Prismana appare così spesso? Velouria azzarda solo che una Vena piena trabocchi di energia. Aeolus tornerà? Dice che potrebbe farlo se la Vena ti riconosce, e la sua voce si sente più volte, ma non si mostra mai. Irelia si risveglierà? Aeolus assicura che il Prismana illuminerà ancora il mondo e che la piccola pianta è già cresciuta.</p>
+<p id="b11">Il diario del gioco conta in tutto 44 capitoli: oltre alla storia principale ci sono 31 tappe «<strong class="nome">Journey</strong>» con leggende regionali e racconti di Astra, 2 capitoli della <strong class="nome">Growth Story</strong>, il percorso di allenamento dell'Istituto, e 3 delle <strong class="nome">Home Quests</strong>. Così il racconto torna, come tutto il resto di questa storia, ai fili che tengono insieme Idyll: le Vene, gli Aeon e gli Aniimo.</p>
+
+  </article>
+  <nav class="pager" aria-label="Capitolo precedente e successivo">
+    <a class="prev" href="leggende.html" rel="prev"><span class="pthumb"><img src="assets/img/anteprime/leggende.jpg" alt="" loading="lazy" decoding="async"></span><span class="ptext"><small>← Capitolo 8</small><b>Leggende e murali</b></span></a>
+    <a class="next" href="glossario.html" rel="next"><span class="ptext"><small>Glossario →</small><b>Le parole del mondo</b></span></a>
+  </nav>
+  <p class="back-index"><a href="index.html#capitoli">Tutti i capitoli</a></p>
+</main>
+
+<footer class="site-footer">
+  <div class="brandline">Lore di Aniimo · versione 2.0 in italiano</div>
+  <div>Testo ricostruito e tradotto da <strong>Nicola del Francia</strong></div>
+  <div class="socials"><a href="https://www.instagram.com/nickdelfra/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/nicola.delfrancia/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.tiktok.com/@nickdelfra" target="_blank" rel="noopener">TikTok</a> · <a href="https://www.twitch.tv/exohunter2118" target="_blank" rel="noopener">Twitch</a> · <a href="https://discord.com/users/371274185206398977" target="_blank" rel="noopener">Discord</a> · <a href="https://steamcommunity.com/profiles/76561198320526546/" target="_blank" rel="noopener">Steam</a></div>
+  <div class="support"><a href="https://paypal.me/nickdelfra" target="_blank" rel="noopener">Sostieni il progetto con PayPal</a></div>
+</footer>
+
+<audio id="bgAudio" src="assets/musica/march-of-progress.mp3" preload="metadata" loop></audio>
+<aside class="player" id="player" aria-label="Lettore musicale">
+  <button class="play" id="playBtn" aria-label="Riproduci"></button>
+  <span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>
+  <div class="player-body">
+    <div class="track-row"><span class="track-title">March of Progress <span>· MALO</span></span><span class="time" id="timeLabel">0:00</span></div>
+    <input type="range" id="seek" value="0" min="0" max="100" step="0.1" aria-label="Posizione nel brano">
+    <div class="ctrl-row"><div>
+      <button class="ctl" id="muteBtn" aria-label="Disattiva l'audio"></button>
+      <input type="range" id="volume" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+      <span class="vol-val" id="volVal">15%</span>
+      <button class="ctl on" id="loopBtn" aria-label="Ripeti il brano" aria-pressed="true"></button>
+    </div></div>
+    <p class="hint" id="hint">La musica parte al primo tocco sulla pagina.</p>
+  </div>
+  <button class="ctl" id="volBtn" aria-label="Volume e ripetizione" aria-expanded="false"></button>
+  <button class="ctl" id="minBtn" aria-label="Riduci il lettore" aria-expanded="true"></button>
+</aside>
+
+<script src="assets/js/app.js" defer></script>
+</body>
+</html>

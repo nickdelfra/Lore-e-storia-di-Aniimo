@@ -2,15 +2,15 @@
 
 **Una raccolta in italiano dedicata alla lore, alla storia e ai capitoli del mondo di Aniimo.**
 
-Testo ricostruito, riformulato e tradotto da **Nicola del Francia**.
+Testo ricostruito, riformulato e tradotto da **Nicola del Francia** · **Versione 2.0**
 
-🌐 **[Consulta la raccolta online](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
+🌐 **[Apri la raccolta online](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
 
 ---
 
 ## 📖 Il progetto
 
-Questo progetto raccoglie e organizza in italiano informazioni sulla storia e sull’universo narrativo di **Aniimo**, rendendole consultabili attraverso un sito web.
+Questo progetto raccoglie e organizza in italiano informazioni sulla storia e sull’universo narrativo di **Aniimo**, rendendole consultabili attraverso un sito web da leggere come un libro illustrato.
 
 La raccolta accompagna il lettore alla scoperta dei luoghi, delle creature e delle forze che plasmano il mondo di gioco, collegando la narrazione alle sue principali meccaniche.
 
@@ -31,23 +31,56 @@ Nei panni di un **Pathfinder**, il giocatore esplora questo universo attraverso 
 
 Astra e l’**Istituto Polaris** costituiscono la base dei Pathfinder, mentre Idyll, le sue rovine e le sue energie custodiscono la storia del mondo.
 
-## 📚 Cosa trovi nella raccolta
+## 📚 I capitoli
 
-- Lore e storia del mondo di Aniimo.
-- Capitoli della narrazione e approfondimenti sul contesto di gioco.
-- Informazioni su Astra, Idyll, gli Aeon e i Pathfinder.
-- Collegamenti tra la lore e meccaniche come il Twine.
-- Nozioni sulla Costa dello Zefiro, sulle Mechina, sui Santuari e sul viaggio rapido.
-- Fonti, crediti e note dell’autore.
+| Pagina | Di cosa parla |
+| --- | --- |
+| Introduzione | La mappa del viaggio e una guida all’uso del sito |
+| Prologo | La storia di Aniimo in breve |
+| 1 · Astra e l’Istituto Polaris | La città sospesa, la Lumintech e gli strumenti dei Pathfinder |
+| 2 · Idyll e l’Antica Idyll | Il continente, le rovine, le Mechina e i Santuari |
+| 3 · Gli Aniimo | Le creature di Idyll, le forme e le evoluzioni |
+| 4 · Il Pathfinder | Chi apre la strada e il ruolo del giocatore |
+| 5 · Il Twine (intreccio) | Il legame tra umano e Aniimo |
+| 6 · Le Vene | Rami, Fioriture, Ambra Lumin e Flusso Prismana |
+| 7 · La Costa dello Zefiro | La terra di Aeolus, Bloomville e il mistero di Irelia |
+| 8 · Leggende e murali | Le leggende dipinte di Idyll |
+| 9 · La storia principale | La trama vissuta dal giocatore (contiene anticipazioni) |
+| Glossario · Conclusione · Fonti | Parole chiave, chiusura, fonti e crediti |
 
-## 🚀 Come consultarla
+## ✨ Novità della versione 2.0
 
-La raccolta è disponibile direttamente dal browser, senza installazioni:
+- Una pagina per ogni capitolo, con indice sempre a portata di mano e schede per passare al capitolo precedente o successivo.
+- Ricerca in tutto il testo, che porta dritta al paragrafo.
+- Tema scuro con il cielo che passa dalla notte all’alba scorrendo la pagina, stelle e stelle cadenti; tema chiaro con l’interruttore giorno/notte.
+- Lettore musicale che non si interrompe cambiando pagina.
+- Nomi propri inglesi in grassetto la prima volta che compaiono in ogni pagina.
 
-👉 **[Apri Lore di Aniimo](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
+## 🗂️ Com’è organizzato il repository
 
-Il sito è pubblicato tramite **GitHub Pages**.
+```
+contenuti/              i testi della raccolta: è qui che si modificano
+  capitoli.json           elenco delle pagine, titoli e descrizioni
+  nomi.json               nomi propri inglesi da mettere in grassetto
+  <pagina>.html           il testo di ogni capitolo, con immagini e didascalie
+strumenti/
+  genera_sito.py          crea le pagine del sito partendo dai testi
+docs/                   il sito pubblicato (generato: non modificarlo a mano)
+  index.html, <pagina>.html
+  assets/css · js · img · musica
+```
 
+### Aggiornare un testo
+
+1. Modifica il file del capitolo in `contenuti/` (per esempio `contenuti/astra.html`).
+2. Lancia `python3 strumenti/genera_sito.py`: le pagine in `docs/` e l’indice della ricerca vengono rigenerati.
+3. Pubblica le modifiche: GitHub Pages aggiorna il sito in un paio di minuti.
+
+### Aggiungere un’immagine
+
+1. Salva l’immagine in `docs/assets/img/<capitolo>/` (per esempio `docs/assets/img/01-astra/`).
+2. Inseriscila nel testo del capitolo con il suo blocco `<figure class="illustration">` e la didascalia, come le altre.
+3. Rigenera il sito con lo script.
 
 ## 🔎 Fonti
 
@@ -86,7 +119,7 @@ Le nozioni sulla **Costa dello Zefiro**, sulle **Mechina**, sui **Santuari** e s
 
 Correzioni, precisazioni e suggerimenti sono benvenuti.
 
-Per proporre una modifica puoi inviare una **Pull Request** a questo repository, indicando:
+Per proporre una modifica puoi inviare una **Pull Request** a questo repository, modificando i file in `contenuti/` e indicando:
 
 - la sezione interessata;
 - l’errore riscontrato o l’informazione da aggiungere;
@@ -123,5 +156,5 @@ Se la raccolta ti è utile, puoi sostenere il lavoro su **[paypal.me/nickdelfra]
 
 ---
 
-**Lore di Aniimo · Raccolta in italiano**  
+**Lore di Aniimo · Raccolta in italiano · Versione 2.0**  
 A cura di **Nicola del Francia**
