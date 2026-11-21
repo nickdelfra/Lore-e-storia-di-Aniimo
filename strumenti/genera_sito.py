@@ -272,6 +272,7 @@ def pagina(titolo, descrizione, url, immagine, kind, main, crumb):
 </aside>
 
 <script src="assets/js/app.js" defer></script>
+<script data-goatcounter="https://nickdelfra.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 """
