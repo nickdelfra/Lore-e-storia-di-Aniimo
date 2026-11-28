@@ -201,6 +201,15 @@ figure.illustration img{width:100%; height:auto; display:block; border-radius:va
 figcaption{margin-top:.8rem; padding-left:.9rem; border-left:2px solid var(--gold-soft); font-size:.97rem; line-height:1.55; color:var(--dim);}
 figcaption strong{display:block; margin-bottom:.2rem; font-family:'Cinzel',serif; font-size:.8rem; letter-spacing:.05em; text-transform:uppercase; color:var(--gold); font-weight:600;}
 .callout{border:1px solid var(--gold-soft); background:var(--panel); border-radius:var(--radius); padding:.9rem 1.1rem; font-style:italic; color:var(--gold); margin:0 0 1.6rem;}
+.annuncio{position:relative; margin:2.6rem 0; padding:1.5rem 1.5rem 1.2rem; border:1px solid var(--gold-soft); border-radius:calc(var(--radius) * 1.5); background:linear-gradient(155deg, var(--panel), transparent 75%); box-shadow:0 14px 44px -22px var(--gold), inset 0 1px 0 rgba(255,255,255,.06);}
+.annuncio::before{content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none; background:radial-gradient(120% 80% at 100% 0%, var(--gold-soft), transparent 55%); opacity:.14;}
+.annuncio > *{position:relative;}
+.annuncio .annuncio-tag{display:inline-flex; align-items:center; gap:.55rem; margin:0 0 .7rem; padding:.28rem .8rem; border:1px solid var(--gold); border-radius:999px; font-family:'Cinzel',serif; font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); background:var(--panel);}
+.annuncio .annuncio-tag::before{content:''; width:.5rem; height:.5rem; border-radius:50%; background:var(--gold); box-shadow:0 0 0 0 var(--gold); animation:annPulse 2s ease-out infinite;}
+.annuncio h2{margin-top:.2rem;}
+.annuncio p:last-child{margin-bottom:.2rem;}
+@keyframes annPulse{0%{box-shadow:0 0 0 0 var(--gold-soft);}70%{box-shadow:0 0 0 .6rem transparent;}100%{box-shadow:0 0 0 0 transparent;}}
+@media (prefers-reduced-motion:reduce){.annuncio .annuncio-tag::before{animation:none;}}
 .glossary dl{display:grid; gap:1.1rem; margin:0;}
 .glossary dt{font-family:'Cinzel',serif; color:var(--gold); font-size:1rem; letter-spacing:.02em;}
 .glossary dd{margin:.2rem 0 0; color:var(--dim);}

@@ -74,7 +74,7 @@ def grassetto(corpo):
     tutte = NOMI.get("modo") == "tutte"
 
     def paragrafo(m):
-        if 'class="callout"' in m.group(1):
+        if 'class="callout"' in m.group(1) or 'annuncio-tag' in m.group(1):
             return m.group(0)
         out, chiuso = [], 0
         for tok in re.split(r"(<[^>]+>)", m.group(2)):
