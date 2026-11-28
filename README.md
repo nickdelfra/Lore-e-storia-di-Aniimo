@@ -2,7 +2,7 @@
 
 **Una raccolta in italiano dedicata alla lore, alla storia e ai capitoli del mondo di Aniimo.**
 
-Testo ricostruito, riformulato e tradotto da **Nicola del Francia** · **Versione 2.0**
+Testo ricostruito, riformulato e tradotto da **Nicola del Francia** · **Versione 2.0** · aggiornato al 28 novembre 2026
 
 🌐 **[Apri la raccolta online](https://nickdelfra.github.io/Lore-e-storia-di-Aniimo/)**
 
@@ -37,18 +37,28 @@ Astra e l’**Istituto Polaris** costituiscono la base dei Pathfinder, mentre Id
 | --- | --- |
 | Introduzione | La mappa del viaggio e una guida all’uso del sito |
 | Prologo | La storia di Aniimo in breve |
-| 1 · Astra e l’Istituto Polaris | La città sospesa, la Lumintech e gli strumenti dei Pathfinder |
+| 1 · Astra e l’Istituto Polaris | La città sospesa, il Preside Oswen, il Dott. Lewis, Nicole e gli strumenti dei Pathfinder (Avamposto, Aniipod, Omniguanto) |
 | 2 · Idyll e l’Antica Idyll | Il continente, le rovine, le Mechina e i Santuari |
-| 3 · Gli Aniimo | Le creature di Idyll, le forme e le evoluzioni |
+| 3 · Gli Aniimo | Le creature di Idyll, le forme, le evoluzioni, gli Aniimo Alfa e la mutazione Sparkling |
 | 4 · Il Pathfinder | Chi apre la strada e il ruolo del giocatore |
 | 5 · Il Twine (intreccio) | Il legame tra umano e Aniimo |
-| 6 · Le Vene | Rami, Fioriture, Ambra Lumin e Flusso Prismana |
-| 7 · La Costa dello Zefiro | La terra di Aeolus, Bloomville e il mistero di Irelia |
-| 8 · Leggende e murali | Le leggende dipinte di Idyll |
-| 9 · La storia principale | La trama vissuta dal giocatore (contiene anticipazioni) |
+| 6 · Le Vene | Rami, Fioriture, Ambra Lumin (come si usa con il Ramo) e Flusso Prismana |
+| 7 · La Costa dello Zefiro | La terra di Aeolus, Bloomville con Jaeger, Sunia e Velouria, e il mistero di Irelia |
+| 8 · Leggende e murali | Le leggende dipinte di Idyll, da Helgon a Infergon e ai Pawney |
+| 9 · La storia principale | La trama vissuta dal giocatore, fino agli episodi sull’acqua, e il pre-annuncio della Stagione 2 (contiene anticipazioni) |
 | Glossario · Conclusione · Fonti | Parole chiave, chiusura, fonti e crediti |
 
-## ✨ Novità della versione 2.0
+## ✨ Novità
+
+### Aggiornamenti dopo la 2.0
+
+- Nuovi dettagli in più capitoli: i volti dell’Istituto Polaris, gli esempi di evoluzione, l’uso dell’Ambra Lumin, il seguito della leggenda di Infergon.
+- Capitolo 9 ampliato con i tre episodi sull’acqua (Whisperwake Isles) e con un riquadro **«Novità in arrivo»** sulla **Stagione 2, «Echoes of the Singing Sea»**, prevista per il 10 dicembre 2026. Verrà completato quando la stagione sarà uscita.
+- Il glossario comprende nuovi termini, come Skiffspear, Pilastro della Marea, Alfa e Omega, Sparkling e Stadio Nova.
+- Il termine italiano **Omniguanto** sostituisce «Omni-glove».
+- Un contatore di visite anonimo (GoatCounter) conta le pagine viste.
+
+### Versione 2.0
 
 - Una pagina per ogni capitolo, con indice sempre a portata di mano e schede per passare al capitolo precedente o successivo.
 - Ricerca in tutto il testo, che porta dritta al paragrafo.
@@ -70,6 +80,10 @@ docs/                   il sito pubblicato (generato: non modificarlo a mano)
   assets/css · js · img · musica
 ```
 
+### Pubblicazione
+
+Il sito è pubblicato con GitHub Pages dalla cartella **`/docs`** del ramo `main` (Settings → Pages → Build and deployment → Branch: `main`, cartella `/docs`). L’indirizzo non cambia con le modifiche ai file: cambia solo se si rinomina il repository o l’account.
+
 ### Aggiornare un testo
 
 1. Modifica il file del capitolo in `contenuti/` (per esempio `contenuti/astra.html`).
@@ -88,8 +102,12 @@ La raccolta fa riferimento alle seguenti risorse. I siti fan e le guide della co
 
 | Fonte | Contenuto di riferimento |
 | --- | --- |
-| AniimoTools — sito fan non ufficiale | Lore, capitoli della storia e guida al Twining |
+| AniimoTools — sito fan non ufficiale | Lore, capitoli della storia, note di aggiornamento e guida al Twining |
 | aniimo.guide | Riassunto completo della storia, versione 1.0 |
+| Sito ufficiale di Aniimo | Annuncio della Stagione 2 |
+| Gamespace | Anteprima di Departure with the Wind: Part 2 |
+| AniimoVerse | Echoes of the Singing Sea: Tempestra Journey |
+| VGMag | Data della Stagione 2 |
 | Xbox Wire | Presentazione di Aniimo |
 | Dexerto | Aniimo Wiki |
 | Metabot | Database Aniimo e missioni principali |
